@@ -1,0 +1,12 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/tymem12/EarDefender_frontend
+[submodule "connector"]
+	path = connector
+	url = https://github.com/tymem12/EarDefender_connector
+[submodule "scraper"]
+	path = scraper
+	url = https://github.com/tymem12/EarDefender_scraper
+[submodule "model"]
+	path = model
+	url = https://github.com/tymem12/EarDefender_model
