@@ -1,12 +1,20 @@
 [submodule "frontend"]
+	active = true
 	path = frontend
-	url = https://github.com/tymem12/EarDefender_frontend
+	url = https://github.com/tymem12/ear-defender-frontend.git
+	branch = main
 [submodule "connector"]
+	active = true
 	path = connector
-	url = https://github.com/tymem12/EarDefender_connector
+	url = https://github.com/tymem12/ear-defender-connector.git
+	branch = main
 [submodule "scraper"]
+	active = true
 	path = scraper
-	url = https://github.com/tymem12/EarDefender_scraper
+	url = https://github.com/tymem12/ear-defender-scraper.git
+	branch = main
 [submodule "model"]
+	active = true
 	path = model
-	url = https://github.com/tymem12/EarDefender_model
+	url = https://github.com/tymem12/ear-defender-model.git
+	branch = main

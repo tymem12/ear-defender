@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./connector
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: target/ear-defender-connector-app.jar
+    image: ear-defender-connector-app:latest
+    container_name: connector-app
+    restart: always
+    ports:
+      - "9090:8080"
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/ear_defender_database
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
+  model:
+    build:
+      context: ./model
+      dockerfile: Dockerfile
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./storage:/app/storage
+      - ./model/results_csv:/app/results_csv
+      - ./model/datasets:/app/datasets
+  audio_scraper:
+    build:
+      context: ./scraper
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./storage:/app/downloads
+
+volumes:
+  mongo_data:
