@@ -18,6 +18,7 @@ services:
       SPRING_DATASOURCE_PASSWORD:
     depends_on:
       - mongo
+
   mongo:
     image: mongo:latest
     container_name: mongo
@@ -37,6 +38,7 @@ services:
       - ./storage:/app/storage
       - ./model/results_csv:/app/results_csv
       - ./model/datasets:/app/datasets
+
   audio_scraper:
     build:
       context: ./scraper
@@ -45,6 +47,13 @@ services:
       - "8000:8000"
     volumes:
       - ./storage:/app/downloads
+    
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
 
 volumes:
   mongo_data:
