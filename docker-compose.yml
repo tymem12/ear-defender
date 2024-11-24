@@ -1,6 +1,10 @@
 version: '3.8'
+networks:
+  internal_network:
+    driver: bridge
 
 services:
+
   app:
     build:
       context: ./connector
@@ -18,6 +22,9 @@ services:
       SPRING_DATASOURCE_PASSWORD:
     depends_on:
       - mongo
+    networks:
+      - internal_network
+  
   mongo:
     image: mongo:latest
     container_name: mongo
@@ -26,6 +33,8 @@ services:
       - mongo_data:/data/db
     ports:
       - "27017:27017"
+    networks:
+      - internal_network
 
   model:
     build:
@@ -37,6 +46,9 @@ services:
       - ./storage:/app/storage
       - ./model/results_csv:/app/results_csv
       - ./model/datasets:/app/datasets
+    networks:
+      - internal_network
+    
   audio_scraper:
     build:
       context: ./scraper
@@ -45,6 +57,17 @@ services:
       - "8000:8000"
     volumes:
       - ./storage:/app/downloads
+    networks:
+      - internal_network
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - internal_network
+      
 volumes:
   mongo_data:
