@@ -11,4 +11,4 @@ To learn more about the implementation, we encourage you to explore the followin
 
 For additional information about the project, development process, and methodologies used, please refer to our application and [article](https://openreview.net/forum?id=Wr9bnLMcLQ).
 
-The application is hosted on GCP and can be accessed [here](http://34.38.43.218:8080/). 
+The application is hosted on GCP and can be accessed [here](http://34.90.139.184:8080/). 
