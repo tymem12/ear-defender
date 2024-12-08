@@ -1,0 +1,7 @@
+title: EarDefender
+description: Detect and verify deepfake audio files easily.
+baseurl: "" # Leave empty unless your site is in a subdirectory
+url: "https://tymem12.github.io" # Replace with your GitHub Pages URL
+theme: jekyll-theme-minimal # Or another supported theme
+exclude:
+  - model/
