@@ -47,6 +47,7 @@ https://github.com/tymem12/ear-defender-model
 ## 🧠 Research & Article
 
 A detailed description of the methodology, datasets, model evaluation (including EER, accuracy, and cross-dataset performance), and implementation can be found in our research paper:
+
 👉 https://openreview.net/forum?id=Wr9bnLMcLQ
 
 
