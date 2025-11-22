@@ -71,7 +71,7 @@ To run the full system locally:
 
 
 
-👥 Authors
+## 👥 Authors
 
 - **Łukasz Jałocha**
 
