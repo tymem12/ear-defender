@@ -7,7 +7,8 @@ A Next-Generation Web Platform for Detecting Audio DeepFakes
 EarDefender is a modular web application designed to automatically search selected social media platforms (e.g., YouTube), extract audio/video materials, analyze them for potential audio DeepFakes using advanced AI models, and generate a comprehensive verification report.
 
 The system presents the entire pipeline:
-web scraping → audio extraction → DeepFake detection → detailed reporting.
+
+**web scraping** → **audio extraction** → **DeepFake detection** → **detailed reporting**
 
 Users can also choose their preferred detection approach, making the analysis adaptable to different use-cases and accuracy requirements.
 
